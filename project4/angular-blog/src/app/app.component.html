@@ -1,0 +1,16 @@
+<div class="rowouter">
+    <div class="columnouter">
+        <div>
+            <app-list [posts]="posts" (openPost)="openPost($event);" (newPost)="newPost();"></app-list>
+        </div>
+    </div>
+    <div class="columnouter">
+        <div *ngIf='isStateEdit()'>
+            <app-edit [post]="currentPost" (previewPost)="previewPost($event);" (savePost)="savePost($event);"
+                (deletePost)="deletePost($event);"></app-edit>
+        </div>
+        <div *ngIf='isStatePreview()'>
+            <app-preview [post]="currentPost" (editPost)="editPost($event);"></app-preview>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+.columnouter {
+    float: left;
+    width: 30%;
+  }
+  
+  .rowouter:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

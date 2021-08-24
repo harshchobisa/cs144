@@ -1,0 +1,26 @@
+[2021-05-24 16:30:55,989] 8b2ce1838ddb/INFO/locust.main: Run time limit set to 30 seconds
+[2021-05-24 16:30:55,989] 8b2ce1838ddb/INFO/locust.main: Starting Locust 1.5.3
+[2021-05-24 16:30:55,990] 8b2ce1838ddb/INFO/locust.runners: Spawning 900 users at the rate 100 users/s (0 users already running)...
+[2021-05-24 16:31:05,971] 8b2ce1838ddb/WARNING/root: CPU usage above 90%! This may constrain your throughput and may even give inconsistent response time measurements! See https://docs.locust.io/en/stable/running-locust-distributed.html for how to distribute the load over multiple CPU cores or machines
+[2021-05-24 16:31:11,417] 8b2ce1838ddb/INFO/locust.runners: All users spawned: MyUser: 900 (900 total running)
+[2021-05-24 16:31:25,971] 8b2ce1838ddb/INFO/locust.main: Time limit reached. Stopping Locust.
+[2021-05-24 16:31:25,972] 8b2ce1838ddb/INFO/locust.runners: Stopping 900 users
+[2021-05-24 16:31:26,737] 8b2ce1838ddb/INFO/locust.runners: 900 Users have been stopped, 0 still running
+[2021-05-24 16:31:26,737] 8b2ce1838ddb/WARNING/locust.runners: CPU usage was too high at some point during the test! See https://docs.locust.io/en/stable/running-locust-distributed.html for how to distribute the load over multiple CPU cores or machines
+[2021-05-24 16:31:26,737] 8b2ce1838ddb/INFO/locust.main: Running teardowns...
+[2021-05-24 16:31:26,737] 8b2ce1838ddb/INFO/locust.main: Shutting down (exit code 0), bye.
+[2021-05-24 16:31:26,738] 8b2ce1838ddb/INFO/locust.main: Cleaning up runner...
+ Name                                                          # reqs      # fails  |     Avg     Min     Max  Median  |   req/s failures/s
+--------------------------------------------------------------------------------------------------------------------------------------------
+ GET /editor/post?action=open                                   14665     0(0.00%)  |     425       2    1221     410  |  477.42    0.00
+ POST /editor/post?action=save                                   3606     0(0.00%)  |     428       2    1126     440  |  117.39    0.00
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregated                                                     18271     0(0.00%)  |     425       2    1221     420  |  594.82    0.00
+
+Response time percentiles (approximated)
+ Type     Name                                                              50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ GET      /editor/post?action=open                                          410    660    730    760    880    930    960    970   1000   1200   1200  14665
+ POST     /editor/post?action=save                                          440    660    730    760    880    930    960    980   1000   1100   1100   3606
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ None     Aggregated                                                        420    660    730    760    880    930    960    970   1000   1200   1200  18271

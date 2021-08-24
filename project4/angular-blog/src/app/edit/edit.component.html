@@ -1,0 +1,23 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Post</title>
+</head>
+<body>
+    <div><h1>Edit Post</h1></div>
+    <div>
+        <button type="button" id="edit-save-button" (click)="this.savePost.emit(post);">Save</button>
+        <button type="button" id="edit-preview-button" (click)="this.previewPost.emit(post);">Preview</button>
+        <button type="button" id="edit-delete-button" (click)="this.deletePost.emit(post);">Delete</button>
+    </div>
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id="edit-title" name="postTitle" (input)="updateTitle($event)" [value]="post.title">
+    </div>
+    <div>
+        <label for="body">Body</label>
+        <textarea style="height: 20rem;" id="edit-body" name="postBody" (input)="updateBody($event)" [value]="post.body"></textarea>
+    </div>
+    <div *ngIf='post.modified != null'>
+        <label type="text" id="postLastModified" >Last modified at: {{dateConversion(post.modified)}}</label>
+    </div>
+</body>

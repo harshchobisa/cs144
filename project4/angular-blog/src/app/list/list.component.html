@@ -1,0 +1,15 @@
+<button type="button" id="list-new-button" (click)="this.newPost.emit();">New Post</button>
+<table class="table table-striped">
+    <thead>
+        <th>Title</th>
+        <th>Created</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts" (click)="this.openPost.emit(post)">
+            <td>{{post.title}}</td>
+            <td>{{dateConversion(post.created)}}</td>
+            <td style="white-space: nowrap" id="list-post-{{post.postid}}"></td>
+        </tr>
+    </tbody>
+</table>
+<!-- <p>GANG</p> -->

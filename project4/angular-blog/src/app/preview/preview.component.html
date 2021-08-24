@@ -1,0 +1,20 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Preview</title>
+</head>
+<body> 
+    <div><h1>Preview Post {{post.postid}} </h1></div>
+    <button type="button" id="preview-edit-button" (click)="this.editPost.emit(post);">Edit</button>
+    <div>
+        <label for="title">Title</label>
+
+        <label for="title" id="preview-title" [innerHtml]=convertToMarkdown(post.title)>
+        </label>
+    </div>
+    <div>
+        <label for="body" >Body</label>
+        <label for="body" id="preview-body" [innerHtml]=convertToMarkdown(post.body) ></label>
+    </div>
+</body>
+</html>

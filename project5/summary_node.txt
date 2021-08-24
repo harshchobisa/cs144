@@ -1,0 +1,26 @@
+[2021-05-24 16:45:52,649] 8b2ce1838ddb/INFO/locust.main: Run time limit set to 30 seconds
+[2021-05-24 16:45:52,649] 8b2ce1838ddb/INFO/locust.main: Starting Locust 1.5.3
+[2021-05-24 16:45:52,649] 8b2ce1838ddb/INFO/locust.runners: Spawning 40 users at the rate 50 users/s (0 users already running)...
+[2021-05-24 16:45:53,466] 8b2ce1838ddb/INFO/locust.runners: All users spawned: MyUser: 40 (40 total running)
+[2021-05-24 16:46:22,444] 8b2ce1838ddb/INFO/locust.main: Time limit reached. Stopping Locust.
+[2021-05-24 16:46:22,445] 8b2ce1838ddb/INFO/locust.runners: Stopping 40 users
+[2021-05-24 16:46:22,459] 8b2ce1838ddb/INFO/locust.runners: 40 Users have been stopped, 0 still running
+[2021-05-24 16:46:22,459] 8b2ce1838ddb/INFO/locust.main: Running teardowns...
+[2021-05-24 16:46:22,459] 8b2ce1838ddb/INFO/locust.main: Shutting down (exit code 0), bye.
+[2021-05-24 16:46:22,459] 8b2ce1838ddb/INFO/locust.main: Cleaning up runner...
+ Name                                                          # reqs      # fails  |     Avg     Min     Max  Median  |   req/s failures/s
+--------------------------------------------------------------------------------------------------------------------------------------------
+ POST /api/posts                                                  277     0(0.00%)  |      24       4    1640       9  |    9.29    0.00
+ GET /blog/cs144                                                 1150     0(0.00%)  |      40       3    1640       7  |   38.58    0.00
+ POST /login                                                       40     0(0.00%)  |    1490     100    2497    1400  |    1.34    0.00
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregated                                                      1467     0(0.00%)  |      77       3    2497       7  |   49.22    0.00
+
+Response time percentiles (approximated)
+ Type     Name                                                              50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ POST     /api/posts                                                          9     11     11     12     14     15     34    810   1600   1600   1600    277
+ GET      /blog/cs144                                                         7      8      9      9     10     13    810   1500   1600   1600   1600   1150
+ POST     /login                                                           1400   1900   2000   2000   2500   2500   2500   2500   2500   2500   2500     40
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ None     Aggregated                                                          7      9      9     10     12    310   1500   1900   2500   2500   2500   1467
